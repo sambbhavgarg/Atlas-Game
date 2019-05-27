@@ -1,0 +1,310 @@
+/* P3 */
+
+body{
+  position: relative;
+  width: 1280px;
+  height: 550px;
+  background: #3848DE;
+}
+/* PLAY */
+
+p{
+  position: absolute;
+  width: 829px;
+  height: 167px;
+  left: 16.83%;
+  right: 33.83%;
+  top:  3.12%;
+  bottom: 75.75%;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 85px;
+  line-height: 100px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+}
+
+/* sub */
+
+hr{
+  position: absolute;
+  left: 33.83%;
+  right: 33.83%;
+  top: 37.12%;
+  bottom: 75.75%;
+  height:7.5px;
+  background: #FFF952;
+  transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+
+/* User entry */
+
+#user{
+  position: absolute;
+  width: 288px;
+  height: 77px;
+  left: 122px;
+  top: 362px;
+  border: 10px solid #FFFF00;
+  box-sizing: border-box;
+}
+
+/* des1 */
+
+#use{
+  position: absolute;
+  width: 77px;
+  height: 77px;
+  left: 55px;
+  top: 362px;
+  background: #FFFF00;
+}
+
+/* User Entry */
+
+#comp{
+  position: absolute;
+  width: 289px;
+  height: 77px;
+  left: 866px;
+  top: 362px;
+  border: 10px solid #FFFF00;
+  box-sizing: border-box;
+}
+
+/* des1 */
+
+#com{
+  position: absolute;
+  width: 77px;
+  height: 77px;
+  left: 1144px;
+  top: 362px;
+  background: #FFFF00;
+}
+
+
+/* Ellipse */
+
+#mid{
+  position: absolute;
+  width: 163px;
+  height: 164px;
+  left: 558px;
+  top: 618px;
+  background: #FFFFFF;
+  border: 5px solid #FFF952;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+
+/* Arrow */
+
+#mid1{
+  position: absolute;
+  width: 1.47px;
+  height: 0px;
+  left: 686.79px;
+  top: 684.26px;
+  border: 10px solid #2E2E2E;
+  box-sizing: border-box;
+}
+
+/* EllipseR */
+
+#sub0{
+  position: absolute;
+  width: 94px;
+  height: 94px;
+  left: 757px;
+  top: 662px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1px solid #2E2E2E;
+  box-sizing: border-box;
+}
+
+/* EllipseL */
+
+#pass{
+  position: absolute;
+  width: 94px;
+  height: 94px;
+  left: 433px;
+  top: 662px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1px solid #2E2E2E;
+  box-sizing: border-box;
+}
+
+/* EllipseT */
+
+#top{
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  left: 115px;
+  top: 99px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  transform: rotate(0deg);
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+#hov:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+
+
+/* Mask Group */
+
+position: absolute;
+width: 829px;
+height: 167px;
+left: 225px;
+top: 66px;
+
+
+
+/* Computer Displa */
+
+position: absolute;
+width: 355px;
+height: 77px;
+left: 866px;
+top: 362px;
+
+background: #FFF952;
+
+
+/* User entry */
+
+position: absolute;
+width: 289px;
+height: 77px;
+left: 866px;
+top: 362px;
+
+border: 10px solid #FFFF00;
+box-sizing: border-box;
+
+
+
+
+/* Mask Group */
+
+position: absolute;
+width: 94px;
+height: 94px;
+left: 470px;
+top: 655px;
+
+
+
+
+
+/* Polygon */
+
+position: absolute;
+width: 57.38px;
+height: 61.04px;
+left: 547.52px;
+top: 672.7px;
+
+background: #2E2E2E;
+border: 1px solid #2E2E2E;
+box-sizing: border-box;
+transform: rotate(90deg);
+
+
+/* Mask Group */
+
+position: absolute;
+width: 163px;
+height: 164px;
+left: 584px;
+top: 603px;
+
+
+
+
+
+
+
+/* Submit */
+
+position: absolute;
+width: 94px;
+height: 94px;
+left: 767px;
+top: 654px;
+
+
+
+
+/* Clickers */
+
+position: absolute;
+width: 67.14px;
+height: 50.05px;
+left: 774.32px;
+top: 675.97px;
+
+
+
+/* Polygon */
+
+position: absolute;
+width: 50.05px;
+height: 50.05px;
+left: 824.38px;
+top: 675.97px;
+
+background: #2E2E2E;
+border: 1px solid #2E2E2E;
+box-sizing: border-box;
+transform: rotate(90deg);
+
+
+/* Rectangle */
+
+position: absolute;
+width: 13.43px;
+height: 43.95px;
+left: 828.04px;
+top: 678.42px;
+
+background: #2E2E2E;
+border: 1px solid #2E2E2E;
+box-sizing: border-box;
+
+
+/* Union */
+
+position: absolute;
+width: 60px;
+height: 60px;
+left: 118px;
+top: 96px;
+
+background: #FFFFFF;
+transform: rotate(-180deg);
+
+
+/* Arrow */
+
+position: absolute;
+width: 34px;
+height: 0px;
+left: 105px;
+top: 66px;
+
+border: 5px solid #FFFFFF;
+box-sizing: border-box;
+transform: rotate(-180deg);
