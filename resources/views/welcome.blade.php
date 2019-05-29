@@ -10,11 +10,11 @@
       {{ csrf_field() }}
       <input id="user" type="text" name="userenter" />
 
-      <div id="n2user"> </div>
+      <div id="next2user"> </div>
 
       <input id="comp" type="text" name="compdisplay" />
 
-      <div id="n2comp"></div>
+      <div id="next2comp"></div>
 
       <input type="image" id="mid" src="mid.png" />
 
