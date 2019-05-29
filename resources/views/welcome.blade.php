@@ -7,7 +7,7 @@
     <p> PLAY </p>
     <hr> </hr>
     <form method="POST" action="/userentry">
-
+      {{ csrf_field() }}
       <input id="user" type="text" name="userenter" />
 
       <div id="n2user"> </div>

@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class AtlasModel extends Model
 {
-    //
+  protected $table = 'userentry';
+
 }
