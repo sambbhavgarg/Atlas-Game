@@ -1,7 +1,9 @@
 
 <html>
   <head>
-     <link rel="stylesheet" type="text/css" href="css/P3.css">
+     <link rel="stylesheet" type="text/css" href="css/P3.css"/>
+     <link rel="shortcut icon" type="image/png" href="/globe-icon.png"/>
+     <title>Play!</title>
   </head>
   <body>
     <p> PLAY </p>
