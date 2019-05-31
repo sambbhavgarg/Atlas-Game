@@ -35,9 +35,14 @@ class AtlasController extends Controller
      */
     public function store(Request $request)
     {
-        $place = new AtlasModel();
-        $place->userentry = request('userenter');
-        $place->save();
+        request()->validate([
+          'Input' => 'required'
+        ]);
+
+        AtlasModel::create([
+          'UserEntry' => request('userenter')
+        ]);
+
         return redirect('/');
     }
 
