@@ -18,7 +18,7 @@
               value="{{ old('entered') }}"
       />
       <div id="next2user"> </div>
-      <input id="comp" type="text" name="compdisplay" />
+    <!--  <input id="comp" type="text" name="compdisplay" /> -->
       <div id="next2comp"></div>
       <input type="image" id="mid" src="mid.png" />
       <input id="sub" type="submit" value="click" />
