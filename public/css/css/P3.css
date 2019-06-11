@@ -96,13 +96,12 @@ hr{
   height: 164px;
   left: 558px;
   top: 618px;
-  background: #FFFFFF;
   border: 7px solid #FFF952;
   box-sizing: border-box;
   border-radius: 50%;
 }
 
-/* Arrow */
+/* Arrow
 
 #mid1{
   position: absolute;
@@ -114,6 +113,8 @@ hr{
   box-sizing: border-box;
 }
 
+*/
+
 /* EllipseR */
 
 #sub{
@@ -123,7 +124,6 @@ hr{
   left: 757px;
   top: 662px;
   border-radius: 50%;
-  background: #FFFFFF;
   border: 3px solid #2E2E2E;
   box-sizing: border-box;
 }
@@ -137,7 +137,6 @@ hr{
   left: 433px;
   top: 662px;
   border-radius: 50%;
-  background: #FFFFFF;
   border: 3px solid #2E2E2E;
   box-sizing: border-box;
 }

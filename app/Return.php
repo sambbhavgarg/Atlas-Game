@@ -9,7 +9,7 @@ class Return extends Model
   protected $primaryKey = 'id';
 
   public function atlas(){
-    return $this->hasMany(AtlasModel::class);
+    return $this->belongsTo(AtlasModel::class);
   }
 
 }

@@ -46,10 +46,10 @@ class AtlasController extends Controller
         ]);
 
         AtlasModel::create([
-          'UserEntry' => request('userenter')
+          'UserEntry' => request('Input')
         ]);
 
-        return redirect('/');
+        return redirect('/play');
     }
 
     /**
