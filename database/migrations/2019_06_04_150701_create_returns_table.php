@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Userentry extends Migration
+class CreateReturnsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class Userentry extends Migration
      */
     public function up()
     {
-      Schema::create('userentry', function (Blueprint $table) {
-          $table->bigIncrements('id');
-          $table->string('Input');
-          $table->timestamps();
-      });
+        Schema::create('returns', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('return');
+            $table->boolean('used')->default(false);
+            $table->timestamps();
+        });
     }
 
     /**
@@ -27,7 +28,6 @@ class Userentry extends Migration
      */
     public function down()
     {
-      Schema::dropIfExists('userentry');
-
+        Schema::dropIfExists('returns');
     }
 }

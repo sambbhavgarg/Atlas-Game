@@ -12,10 +12,16 @@ class AtlasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function home()
     {
-        //
+        return view('P1');
     }
+
+    public function intro()
+    {
+      return view('P2');
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -24,7 +30,7 @@ class AtlasController extends Controller
      */
     public function create()
     {
-        //
+        return view('P3');
     }
 
     /**
@@ -52,10 +58,10 @@ class AtlasController extends Controller
      * @param  \App\AtlasModel  $atlasModel
      * @return \Illuminate\Http\Response
      */
-    public function show(AtlasModel $atlasModel)
-    {
-        //
-    }
+    // public function show(AtlasModel $atlasModel)
+    // {
+    //     //
+    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -63,10 +69,10 @@ class AtlasController extends Controller
      * @param  \App\AtlasModel  $atlasModel
      * @return \Illuminate\Http\Response
      */
-    public function edit(AtlasModel $atlasModel)
-    {
-        //
-    }
+    // public function edit(AtlasModel $atlasModel)
+    // {
+    //     //
+    // }
 
     /**
      * Update the specified resource in storage.
@@ -75,10 +81,10 @@ class AtlasController extends Controller
      * @param  \App\AtlasModel  $atlasModel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AtlasModel $atlasModel)
-    {
-        //
-    }
+    // public function update(Request $request, AtlasModel $atlasModel)
+    // {
+    //     //
+    // }
 
     /**
      * Remove the specified resource from storage.
@@ -86,8 +92,8 @@ class AtlasController extends Controller
      * @param  \App\AtlasModel  $atlasModel
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AtlasModel $atlasModel)
-    {
-        //
-    }
+    // public function destroy(AtlasModel $atlasModel)
+    // {
+    //     //
+    // }
 }

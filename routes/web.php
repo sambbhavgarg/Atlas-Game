@@ -11,8 +11,9 @@
 |
 */
 //
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::resource('userentry','AtlasController');
+
+Route::get('/','AtlasController@home');
+Route::get('/introduction','AtlasController@intro');
+Route::get('/play','AtlasController@create');

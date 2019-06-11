@@ -1,0 +1,228 @@
+/* P1 */
+body{
+  position: relative;
+  width: 1280px;
+  height: 800px;
+  background: #0F7A8A;
+}
+
+/* Main-BG */
+
+#img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(main.jpeg);
+  opacity: 0.5;
+}
+/* ATLAS */
+
+#atlas{
+  position: absolute;
+  left: 16.58%;
+  right: 16.58%;
+  top: 20.72%;
+  bottom: 20.72%;
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 100px;
+  line-height: 117px;
+  text-align: center;
+  color: #FFF952;
+}
+
+/* Under ATLAS Rectangle */
+
+hr{
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  top:  49%;
+  bottom: 47%;
+  background: #FFF952;
+}
+
+/* How well do you know your world? */
+
+#world{
+  position: absolute;
+  width: 602px;
+  height: 61px;
+  left: 339px;
+  top: 451px;
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 35px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+/* Next */
+
+#next{
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  left: 1177px;
+  top: 707px;
+}
+
+
+/* MainRightTris */
+
+#left{
+  position: absolute;
+  width: 173.25px;
+  height: 788px;
+  left: 0px;
+  top: 10px;
+  transform: rotate( 180deg);
+}
+
+
+/* MainLeftTris */
+
+#right{
+  position: absolute;
+  width: 173.25px;
+  height: 788px;
+  left: 1105px;
+  top: 10px;
+  transform: rotate(0deg);
+}
+
+
+
+/* Polygon */
+
+width: 788px;
+height: 443px;
+left: 36px;
+top: 6px;
+
+background: #FFF952;
+border: 30px solid #FFF952;
+box-sizing: border-box;
+transform: rotate(90deg);
+
+
+
+/* Polygon */
+
+position: absolute;
+width: 682.43px;
+height: 332.25px;
+left: 1114px;
+top: 742.43px;
+
+border: 30px solid #FFF952;
+box-sizing: border-box;
+transform: rotate(-90deg);
+
+
+
+/* Polygon */
+position: absolute;
+width: 649.63px;
+height: 349px;
+left: 1186px;
+top: 725.63px;
+
+border: 30px solid #FFFFFF;
+box-sizing: border-box;
+transform: rotate(-90deg);
+
+
+/* Ellipse */
+
+position: absolute;
+width: 60px;
+height: 60px;
+left: 1177px;
+top: 707px;
+border-radius: 50%;
+
+mix-blend-mode: normal;
+border: 5px solid #FFFFFF;
+box-sizing: border-box;
+
+/* Polygon */
+
+position: absolute;
+width: 682.43px;
+height: 332.25px;
+left: 166.25px;
+top: 59px;
+
+border: 30px solid #FFF952;
+box-sizing: border-box;
+transform: rotate(45deg);
+
+
+
+/* Polygon */
+
+position: absolute;
+width: 649.63px;
+height: 349px;
+left: 97px;
+top: 75px;
+
+border: 30px solid #FFFFFF;
+box-sizing: border-box;
+transform: rotate(75deg);
+
+
+/* Polygon */
+
+position: absolute;
+width: 788px;
+height: 443px;
+left: 1244.25px;
+top: 795px;
+
+background: #FFF952;
+border: 30px solid #FFF952;
+box-sizing: border-box;
+transform: rotate(-90deg);
+
+
+
+
+
+
+
+/
+
+
+
+
+
+
+
+
+
+/* Arrow */
+
+position: absolute;
+width: 34px;
+height: 0px;
+left: 1190px;
+top: 737px;
+
+border: 5px solid #FFFFFF;
+box-sizing: border-box;
+
+
+
+
+/* Union */
+
+position: absolute;
+width: 808px;
+height: 111px;
+left: calc(50% - 808px/2);
+top: calc(50% - 111px/2 - 35.5px);

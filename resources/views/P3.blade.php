@@ -4,7 +4,7 @@
      <link rel="shortcut icon" type="image/png" href="/globe-icon.png"/>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
-     <link rel="stylesheet" type="text/css" href="css/P3.css"/>
+     <link rel="stylesheet" type="text/css" href="css/css/P3.css"/>
      <title>Play!</title>
   </head>
   <body>
@@ -18,12 +18,12 @@
               value="{{ old('entered') }}"
       />
       <div id="next2user"> </div>
-    <!--  <input id="comp" type="text" name="compdisplay" /> -->
+      <input id="comp" type="text" name="compdisplay" />
       <div id="next2comp"></div>
-      <input type="image" id="mid" src="mid.png" />
-      <input id="sub" type="submit" value="click" />
-      <input type="image" id="pass" src="left.png" />
-      <input type="image" id="top" src="back.png" />
+      <input type="image" id="mid" src="Enter.png" />
+      <input id="sub" type="image" value="click" src="Submit.png"/>
+      <input type="image" id="pass" src="Pass.png" />
+      <input type="image" id="top" src="backButton.png" />
 
       @if ($errors->any())
       <div class="notification is-danger">

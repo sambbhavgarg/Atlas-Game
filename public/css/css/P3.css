@@ -87,6 +87,7 @@ hr{
 }
 
 
+
 /* Ellipse */
 
 #mid{
@@ -96,7 +97,7 @@ hr{
   left: 558px;
   top: 618px;
   background: #FFFFFF;
-  border: 5px solid #FFF952;
+  border: 7px solid #FFF952;
   box-sizing: border-box;
   border-radius: 50%;
 }
@@ -115,7 +116,7 @@ hr{
 
 /* EllipseR */
 
-#sub0{
+#sub{
   position: absolute;
   width: 94px;
   height: 94px;
@@ -123,7 +124,7 @@ hr{
   top: 662px;
   border-radius: 50%;
   background: #FFFFFF;
-  border: 1px solid #2E2E2E;
+  border: 3px solid #2E2E2E;
   box-sizing: border-box;
 }
 
@@ -137,7 +138,7 @@ hr{
   top: 662px;
   border-radius: 50%;
   background: #FFFFFF;
-  border: 1px solid #2E2E2E;
+  border: 3px solid #2E2E2E;
   box-sizing: border-box;
 }
 
@@ -149,16 +150,21 @@ hr{
   height: 60px;
   left: 115px;
   top: 99px;
-  background: #FFFFFF;
   border-radius: 50%;
-  transform: rotate(0deg);
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s;
 }
+
+transform: rotate(0deg);
+
+-webkit-transition-duration: 0.4s;
+
+transition-duration: 0.4s;
+
 #hov:hover {
   background-color: #4CAF50; /* Green */
   color: white;
 }
+
+
 
 
 

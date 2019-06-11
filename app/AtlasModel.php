@@ -9,4 +9,8 @@ class AtlasModel extends Model
   protected $table = 'userentry';
   protected $fillable = ['UserEntry'];
 
+  public function return(){
+    return $this->hasMany(Return::class);
+  }
+
 }
