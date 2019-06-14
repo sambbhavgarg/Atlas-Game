@@ -12,8 +12,11 @@
 */
 //
 
-Route::resource('userentry','AtlasController');
+Route::resource('play','AtlasController');
 
 Route::get('/','AtlasController@home');
-Route::get('/introduction','AtlasController@intro');
-Route::get('/play','AtlasController@create');
+//Route::get('/introduction','AtlasController@intro');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

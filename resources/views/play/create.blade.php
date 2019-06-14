@@ -5,7 +5,7 @@
      <link rel="shortcut icon" type="image/png" href="/globe-icon.png"/>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
-     <link rel="stylesheet" type="text/css" href="css/css/P3.css"/>
+     <link rel="stylesheet" type="text/css" href="/css/css/P3.css"/>
      <title>Play!</title>
   </head>
 
@@ -15,16 +15,14 @@
     <div id="next2user"> </div>
     <div id="next2comp"></div>
 
-    <form method="POST" action="/userentry">
-
-      {{ csrf_field() }}
-
+    <form method="POST" action="/play">
+      @csrf
       <input id="user" type="text" name="Input"
-              class="input {{ $errors->has('entered') ? 'is-danger' : '' }}"
+              class="input {{ $errors->has('Input') ? 'is-danger' : '' }}"
               placeholder="Enter Country or Capital"
-              value="{{ old('entered') }}"/>
+              value="{{ old('Input') }}" />
 
-      <input type="image" id="mid" src="Enter.png" />
+      <input type="image" id="mid" src="Enter.png"/>
 
       @if ($errors->any())
       <div class="notification is-danger">
@@ -35,7 +33,6 @@
         </ul>
       </div>
       @endif
-
     </form>
 
 <!-- Convert this LoC to display box
@@ -51,6 +48,8 @@
     <form action="/introduction" method="GET">
       <input type="image" id="top" src="backButton.png" />
     </form>
+
+
 
   </body>
 </html>

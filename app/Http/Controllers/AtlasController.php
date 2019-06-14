@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\AtlasModel;
+use App\Display;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
+
 
 class AtlasController extends Controller
 {
@@ -14,12 +18,12 @@ class AtlasController extends Controller
      */
     public function home()
     {
-        return view('P1');
+        return view('play.P1');
     }
 
-    public function intro()
+    public function index()
     {
-      return view('P2');
+      return view('play.P2');
     }
 
 
@@ -30,7 +34,7 @@ class AtlasController extends Controller
      */
     public function create()
     {
-        return view('P3');
+        return view('play.create');
     }
 
     /**
@@ -39,17 +43,27 @@ class AtlasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request)//Request $request)
     {
         request()->validate([
           'Input' => 'required'
         ]);
 
         AtlasModel::create([
-          'UserEntry' => request('Input')
+          'Input' => request('Input')
         ]);
 
-        return redirect('/play');
+        $term = request('Input')[0];
+
+        $displayed = Display::select('select * from displays where display like ?',['d%']);
+         for ($i=0; $i < 5 ; $i++) {
+           echo($displayed->display);
+         }
+        //
+        //
+        //   //dd($display->return);
+
+        return view('play.createwithdisplay', ['displayed' => $displayed]);//,compact('display'));
     }
 
     /**

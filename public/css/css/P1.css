@@ -3,7 +3,8 @@ body{
   position: relative;
   width: 1280px;
   height: 800px;
-  background: #0F7A8A;
+  background: url(/css/main.jpeg);
+  opacity: 0.5;
 }
 
 /* Main-BG */
@@ -12,8 +13,8 @@ body{
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url(main.jpeg);
-  opacity: 0.5;
+  background: #0F7A8A;
+
 }
 /* ATLAS */
 

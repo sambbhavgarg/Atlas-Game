@@ -1,6 +1,6 @@
 <html>
   <head>
-     <link rel="stylesheet" type="text/css" href="css/css/P2.css">
+     <link rel="stylesheet" type="text/css" href="/css/css/P2.css">
   </head>
   <body>
     <p>ATLAS</p>
@@ -19,7 +19,7 @@
       <input type="image" id="backButton" value="Submit"/>
     </form>
 
-    <form method="GET" action="/play">
+    <form method="GET" action="/play/create">
       <input type="image" id="nextButton" value="Submit"/>
      </form>
 

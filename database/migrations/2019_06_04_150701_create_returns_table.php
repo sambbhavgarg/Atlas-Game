@@ -13,9 +13,9 @@ class CreateReturnsTable extends Migration
      */
     public function up()
     {
-        Schema::create('returns', function (Blueprint $table) {
+        Schema::create('displays', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('return');
+            $table->string('display');
             $table->boolean('used')->default(false);
             $table->timestamps();
         });
@@ -28,6 +28,6 @@ class CreateReturnsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('returns');
+        Schema::dropIfExists('displays');
     }
 }

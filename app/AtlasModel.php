@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Display;
+
 use Illuminate\Database\Eloquent\Model;
 
 class AtlasModel extends Model
@@ -10,7 +12,7 @@ class AtlasModel extends Model
   protected $guarded = [];
 
   public function return(){
-    return $this->hasMany('App\Return');
+    return $this->hasMany(Display::class);
   }
 
 }
