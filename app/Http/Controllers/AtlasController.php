@@ -49,14 +49,23 @@ class AtlasController extends Controller
           'Input' => 'required'
         ]);
 
-        AtlasModel::create([
-          'Input' => request('Input')
-          'used' => true;
-        ]);
+        $check = request('Input');
+
+        $check1 = Display::where('display', '=', "$check", 'and', 'used','=','null');
+
+        if($check1)
+        {
+          AtlasModel::create([
+            'Input' => $check
+          ]);
+          Display::where('display', '=', "$check")->update(['used' => TRUE]);
+        } else {
+          echo "not found";
+        }
 
         $term = request('Input');
 
-        $display = Display::where('display', 'LIKE', "$term[-1]%")->inRandomOrder()->get();
+        $display = Display::where('display', 'LIKE', "$term[-1]%",'and','used','=','null')->inRandomOrder()->get();
         $area = $display->random();
         // dd($area);
 
