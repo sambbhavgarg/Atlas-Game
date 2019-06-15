@@ -51,19 +51,16 @@ class AtlasController extends Controller
 
         AtlasModel::create([
           'Input' => request('Input')
+          'used' => true;
         ]);
 
-        $term = request('Input')[0];
+        $term = request('Input');
 
-        $displayed = Display::select('select * from displays where display like ?',['d%']);
-         for ($i=0; $i < 5 ; $i++) {
-           echo($displayed->display);
-         }
-        //
-        //
-        //   //dd($display->return);
+        $display = Display::where('display', 'LIKE', "$term[-1]%")->inRandomOrder()->get();
+        $area = $display->random();
+        // dd($area);
 
-        return view('play.createwithdisplay', ['displayed' => $displayed]);//,compact('display'));
+        return view('play.createwithdisplay', ['areas' => $area]);//,compact('display'));
     }
 
     /**
