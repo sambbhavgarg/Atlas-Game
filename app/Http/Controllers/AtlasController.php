@@ -53,23 +53,28 @@ class AtlasController extends Controller
 
         $check1 = Display::where('display', '=', "$check", 'and', 'used','=','null');
 
-        if($check1)
+        if($check1!=null)
         {
           AtlasModel::create([
             'Input' => $check
           ]);
+
           Display::where('display', '=', "$check")->update(['used' => TRUE]);
+
+          $term = request('Input');
+
+          $display = Display::where('display', 'LIKE', "$term[-1]%",'and','used','=','null')->inRandomOrder()->get();
+
+          $area = $display->random();
+          return view('play.createwithdisplay', ['areas' => $area]);//,compact('display'));
+
         } else {
           echo "not found";
         }
 
-        $term = request('Input');
 
-        $display = Display::where('display', 'LIKE', "$term[-1]%",'and','used','=','null')->inRandomOrder()->get();
-        $area = $display->random();
         // dd($area);
 
-        return view('play.createwithdisplay', ['areas' => $area]);//,compact('display'));
     }
 
     /**
