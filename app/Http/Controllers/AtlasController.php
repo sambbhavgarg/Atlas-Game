@@ -45,39 +45,25 @@ class AtlasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Display $displays)//Request $request)
+    public function store(Request $request, Display $displays)
     {
         request()->validate([
           'Input' => 'required'
         ]);
-
         $input = request('Input');
-
-        // $displays = Display::all();
-
         if($displays->where('display',$input)->first()!=null && $displays->where('display',$input)->first()->used == null)
         {
           Display::where('display', $input)->update(['used' => TRUE]);
-
           AtlasModel::create([
             'Input' => $input
           ]);
-
           $display = Display::where('display', 'LIKE', "$input[-1]%",'and','used','=','null')->inRandomOrder()->first();
-
           Display::where('display', $display->display)->update(['used' => TRUE]);
-
           $area = $display;
-
-          return view('play.createwithdisplay', ['areas' => $area]);//,compact('display'));
-
+          return view('play.createwithdisplay', ['areas' => $area]);
           } else {
             echo "not found";
           }
-
-
-        // dd($area);
-
     }
 
     /**
