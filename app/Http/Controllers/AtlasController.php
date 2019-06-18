@@ -45,7 +45,7 @@ class AtlasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)//Request $request)
+    public function store(Request $request, Display $displays)//Request $request)
     {
         request()->validate([
           'Input' => 'required'
@@ -53,13 +53,9 @@ class AtlasController extends Controller
 
         $input = request('Input');
 
-        $display = Display::all();
-        // $number = $display->where('display',$input)->first();//->id;
+        // $displays = Display::all();
 
-        //dd($number);
-
-        if($display->where('display',$input)->first()!=null && $display->where('display',$input)->first()->used == null)
-
+        if($displays->where('display',$input)->first()!=null && $displays->where('display',$input)->first()->used == null)
         {
           Display::where('display', $input)->update(['used' => TRUE]);
 
@@ -67,11 +63,11 @@ class AtlasController extends Controller
             'Input' => $input
           ]);
 
-          $display1 = Display::where('display', 'LIKE', "$input[-1]%",'and','used','=','null')->inRandomOrder()->get();
+          $display = Display::where('display', 'LIKE', "$input[-1]%",'and','used','=','null')->inRandomOrder()->first();
 
-          Display::where('display', $display1)->update(['used' => TRUE]);
+          Display::where('display', $display->display)->update(['used' => TRUE]);
 
-          $area = $display1->random();
+          $area = $display;
 
           return view('play.createwithdisplay', ['areas' => $area]);//,compact('display'));
 
