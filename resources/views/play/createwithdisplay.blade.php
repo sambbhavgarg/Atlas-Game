@@ -10,7 +10,6 @@
   </head>
 
   <body>
-
     <p> PLAY </p>
     <hr> </hr>
     <div id="next2user"> </div>
@@ -24,7 +23,7 @@
               value="{{ old('Input') }}" />
 
       <input type="image" id="mid" src="Enter.png"/>
-      
+
       <ul>
           <li>{{ $areas->display }}</li>
       </ul>

@@ -20,10 +20,10 @@ body{
 
 #atlas{
   position: absolute;
-  left: 16.58%;
-  right: 16.58%;
-  top: 20.72%;
-  bottom: 20.72%;
+  left: 20%;
+  right: 20%;
+  top:  32 %;
+  bottom: 47%;
   font-family: sans-serif;
   font-style: normal;
   font-weight: bold;
@@ -37,11 +37,13 @@ body{
 
 hr{
   position: absolute;
-  left: 20%;
-  right: 20%;
-  top:  49%;
-  bottom: 47%;
+  left: 33.83%;
+  right: 33.83%;
+  top: 37.12%;
+  bottom: 75.75%;
+  height:7.5px;
   background: #FFF952;
+  transform: matrix(1, 0, 0, -1, 0, 0);
 }
 
 /* How well do you know your world? */

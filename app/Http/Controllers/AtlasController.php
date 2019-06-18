@@ -16,22 +16,24 @@ class AtlasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function home()
-    {
+    public function home(){
+
         return view('play.P1');
+
     }
 
-    public function index()
-    {
+    public function index(){
+
       return view('play.P2');
-    }
 
+    }
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function create()
     {
         return view('play.create');
@@ -49,28 +51,33 @@ class AtlasController extends Controller
           'Input' => 'required'
         ]);
 
-        $check = request('Input');
+        $input = request('Input');
 
-        $check1 = Display::where('display', '=', "$check", 'and', 'used','=','null');
+        $display = Display::all();
+        // $number = $display->where('display',$input)->first();//->id;
 
-        if($check1!=null)
+        //dd($number);
+
+        if($display->where('display',$input)->first()!=null && $display->where('display',$input)->first()->used == null)
+
         {
+          Display::where('display', $input)->update(['used' => TRUE]);
+
           AtlasModel::create([
-            'Input' => $check
+            'Input' => $input
           ]);
 
-          Display::where('display', '=', "$check")->update(['used' => TRUE]);
+          $display1 = Display::where('display', 'LIKE', "$input[-1]%",'and','used','=','null')->inRandomOrder()->get();
 
-          $term = request('Input');
+          Display::where('display', $display1)->update(['used' => TRUE]);
 
-          $display = Display::where('display', 'LIKE', "$term[-1]%",'and','used','=','null')->inRandomOrder()->get();
+          $area = $display1->random();
 
-          $area = $display->random();
           return view('play.createwithdisplay', ['areas' => $area]);//,compact('display'));
 
-        } else {
-          echo "not found";
-        }
+          } else {
+            echo "not found";
+          }
 
 
         // dd($area);
