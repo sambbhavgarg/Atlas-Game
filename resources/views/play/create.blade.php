@@ -20,20 +20,18 @@
       <input id="user" type="text" name="Input"
               class="input {{ $errors->has('Input') ? 'is-danger' : '' }}"
               placeholder="Enter Country or Capital"
-              value="{{ old('Input') }}" />
+              value="{{ old('Input') }}" required/>
 
-      <input type="image" id="mid" src="Enter.png"/>
+      <input type="image" id="mid" src="Enter.png" onclick=""/>
 
-      @if ($errors->any())
-      <div class="notification is-danger">
+      @if ($areas=='atlas')
+      @elseif ($areas)
         <ul>
-          @foreach($errors->all() as $err)
-          <li>{{ $err }}</li>
-          @endforeach
+            <li>{{ $areas->display }}</li>
         </ul>
-      </div>
       @endif
-    </form>
+
+      @include('errors')
 
 <!-- Convert this LoC to display box
     <input id="comp" type="text" name="compdisplay" />
@@ -48,7 +46,6 @@
     <form action="/introduction" method="GET">
       <input type="image" id="top" src="backButton.png" />
     </form>
-
 
 
   </body>
