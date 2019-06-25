@@ -15,7 +15,7 @@
     <div id="next2user"> </div>
     <div id="next2comp"></div>
 
-    <form method="POST" action="/play">
+    <form name="userinput" method="POST" action="/play">
       @csrf
       <input id="user" type="text" name="Input"
               class="input {{ $errors->has('Input') ? 'is-danger' : '' }}"
@@ -24,13 +24,25 @@
 
       <input type="image" id="mid" src="Enter.png" onclick=""/>
 
-      @if ($areas=='atlas')
-      @elseif ($areas)
+      <script type="text/javascript">
+        // let form = document.forms.userinput;
+        // let elem = form.elements.Input;
+        // alert(elem);
+      </script>
+
+
+      @if ($areas && Request::all()['Input'][0] == $areas->display[0])
         <ul>
             <li>{{ $areas->display }}</li>
+            <li>{{ Request::all()['Input'][0] }}</li>
+            <li>{{ $areas->display[0] }}</li>
         </ul>
-      @endif
 
+      @else
+        <h1>Error!</h1>
+        <li>{{ Request::all()['Input'] }}</li>
+        <li>{{ $areas->display[-1] }}</li>
+      @endif
       @include('errors')
 
 <!-- Convert this LoC to display box

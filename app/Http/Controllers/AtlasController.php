@@ -42,32 +42,30 @@ class AtlasController extends Controller
         request()->validate([
           'Input' => 'required'
         ]);
-
-        $GLOBALS['recents[2]';];
-
         //input is saved to a variable
         $input = request('Input');
         //eloquent statements to check conditions for returning the country
         if($displays->where('display',$input)->first()!=null  &&//
-           $displays->where('display',$input)->first()->used == null //&&
-          // $for_next[-1] == $input[0])
+           $displays->where('display',$input)->first()->used == null)
         {
-
+          //toggle boolean 'used' to true after user inputs a country/capital
           Display::where('display', $input)->update(['used' => TRUE]);
+          //create an entry for user input in Atlas Model.(mostly inconsequential)
           AtlasModel::create([
             'Input' => $input
           ]);
-
+          //store a random country/capital starting from the last letter of input
           $display = Display::where('display', 'LIKE', "$input[-1]%",'and','used','=','null')
           ->inRandomOrder()
           ->first();
-
+          //toggle the returned country/capital's boolean to true
           Display::where('display', $display->display)->update(['used' => TRUE]);
+          //store the
           $area = $display;
-          //$GLOBALS['for_next'] = $GLOBALS['area'];
-          return view('play.createwithdisplay', ['areas' => $area]);
+          return view('play.create', ['areas' => $area]);
           } else {
-            echo "not found";
+              // return view('play.error-page');
+              echo "not found";
           }
     }
     /**
