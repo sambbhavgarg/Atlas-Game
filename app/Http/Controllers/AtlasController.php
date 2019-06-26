@@ -7,8 +7,6 @@ use App\Display;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-
-
 class AtlasController extends Controller
 {
     /**
@@ -17,28 +15,21 @@ class AtlasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function home(){
-
         return view('play.P1');
-
     }
 
     public function index(){
-
       return view('play.P2');
-
     }
-
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-
     public function create()
     {
-        return view('play.create');
+        return view('play.create')->withAreas('atlas');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -47,23 +38,43 @@ class AtlasController extends Controller
      */
     public function store(Request $request, Display $displays)
     {
-        request()->validate([
-          'Input' => 'required'
-        ]);
+        //input is validated
+        $this->validateRequest();
+        //input is saved to a variable
         $input = request('Input');
-        if($displays->where('display',$input)->first()!=null && $displays->where('display',$input)->first()->used == null)
+        //eloquent statements to check conditions for returning the country
+        if($displays->where('display',$input)->first()!=null  &&//
+           $displays->where('display',$input)->first()->used == null)
         {
+          //toggle boolean 'used' to true after user inputs a country/capital
           Display::where('display', $input)->update(['used' => TRUE]);
+          //create an entry for user input in Atlas Model.(mostly inconsequential)
           AtlasModel::create([
             'Input' => $input
           ]);
-          $display = Display::where('display', 'LIKE', "$input[-1]%",'and','used','=','null')->inRandomOrder()->first();
+          //store a random country/capital starting from the last letter of input
+          $display = Display::where('display', 'LIKE', "$input[-1]%",'and','used','=','null')
+          ->inRandomOrder()
+          ->first();
+          //toggle the returned country/capital's boolean to true
           Display::where('display', $display->display)->update(['used' => TRUE]);
-          $area = $display;
-          return view('play.createwithdisplay', ['areas' => $area]);
+          //store the
+          $area = $display->display;
+          return view('play.create', ['areas' => $area]);
           } else {
-            echo "not found";
+              // return view('play.error-page');
+              echo "not found";
           }
+    }
+
+    /**
+     * Display the specified resource.
+   */
+    public function validateRequest()
+    {
+      return request()->validate([
+        'Input' => 'required'
+      ]);
     }
 
     /**
@@ -110,4 +121,5 @@ class AtlasController extends Controller
     // {
     //     //
     // }
+
 }

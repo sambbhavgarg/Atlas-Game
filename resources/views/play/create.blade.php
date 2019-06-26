@@ -15,25 +15,32 @@
     <div id="next2user"> </div>
     <div id="next2comp"></div>
 
-    <form method="POST" action="/play">
+    <form name="userinput" method="POST" action="/play">
       @csrf
       <input id="user" type="text" name="Input"
               class="input {{ $errors->has('Input') ? 'is-danger' : '' }}"
               placeholder="Enter Country or Capital"
-              value="{{ old('Input') }}" />
+              value="{{ old('Input') }}" required/>
 
-      <input type="image" id="mid" src="Enter.png"/>
+      <input type="image" id="mid" src="Enter.png" onclick=""/>
 
-      @if ($errors->any())
-      <div class="notification is-danger">
+      @if($areas=='atlas')<!--Request::all()['Input'] doesnt work here because it may be empty -->
         <ul>
-          @foreach($errors->all() as $err)
-          <li>{{ $err }}</li>
-          @endforeach
+          <h1>{{ $areas }}</h1>
+          <h1> Please enter Country/Capital starting with {{ $areas[-1] }}</h1>
         </ul>
-      </div>
+      @elseif($areas && Request::all()['Input'][0] == $areas[-1])
+        <ul>
+            <li>{{ $areas }}</li>
+            <li>{{ Request::all()['Input'][0] }}</li>
+            <li>{{ $areas[0] }}</li>
+        </ul>
+      @else
+        <h1>Error!</h1>
+        <h1> Please enter Country/Capital starting with {{ $areas[-1] }}</h1>
       @endif
-    </form>
+
+      @include('errors')
 
 <!-- Convert this LoC to display box
     <input id="comp" type="text" name="compdisplay" />
@@ -48,7 +55,6 @@
     <form action="/introduction" method="GET">
       <input type="image" id="top" src="backButton.png" />
     </form>
-
 
 
   </body>
