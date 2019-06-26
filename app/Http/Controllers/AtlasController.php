@@ -39,9 +39,7 @@ class AtlasController extends Controller
     public function store(Request $request, Display $displays)
     {
         //input is validated
-        request()->validate([
-          'Input' => 'required'
-        ]);
+        $this->validateRequest();
         //input is saved to a variable
         $input = request('Input');
         //eloquent statements to check conditions for returning the country
@@ -61,13 +59,24 @@ class AtlasController extends Controller
           //toggle the returned country/capital's boolean to true
           Display::where('display', $display->display)->update(['used' => TRUE]);
           //store the
-          $area = $display;
+          $area = $display->display;
           return view('play.create', ['areas' => $area]);
           } else {
               // return view('play.error-page');
               echo "not found";
           }
     }
+
+    /**
+     * Display the specified resource.
+   */
+    public function validateRequest()
+    {
+      return request()->validate([
+        'Input' => 'required'
+      ]);
+    }
+
     /**
      * Display the specified resource.
      *
@@ -112,4 +121,5 @@ class AtlasController extends Controller
     // {
     //     //
     // }
+
 }

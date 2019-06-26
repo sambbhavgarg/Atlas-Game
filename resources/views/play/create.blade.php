@@ -24,25 +24,22 @@
 
       <input type="image" id="mid" src="Enter.png" onclick=""/>
 
-      <script type="text/javascript">
-        // let form = document.forms.userinput;
-        // let elem = form.elements.Input;
-        // alert(elem);
-      </script>
-
-
-      @if ($areas && Request::all()['Input'][0] == $areas->display[0])
+      @if($areas=='atlas')<!--Request::all()['Input'] doesnt work here because it may be empty -->
         <ul>
-            <li>{{ $areas->display }}</li>
-            <li>{{ Request::all()['Input'][0] }}</li>
-            <li>{{ $areas->display[0] }}</li>
+          <h1>{{ $areas }}</h1>
+          <h1> Please enter Country/Capital starting with {{ $areas[-1] }}</h1>
         </ul>
-
+      @elseif($areas && Request::all()['Input'][0] == $areas[-1])
+        <ul>
+            <li>{{ $areas }}</li>
+            <li>{{ Request::all()['Input'][0] }}</li>
+            <li>{{ $areas[0] }}</li>
+        </ul>
       @else
         <h1>Error!</h1>
-        <li>{{ Request::all()['Input'] }}</li>
-        <li>{{ $areas->display[-1] }}</li>
+        <h1> Please enter Country/Capital starting with {{ $areas[-1] }}</h1>
       @endif
+
       @include('errors')
 
 <!-- Convert this LoC to display box
